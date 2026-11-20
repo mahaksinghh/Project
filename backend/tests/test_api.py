@@ -21,10 +21,13 @@ class RiskTests(unittest.TestCase):
         self.assertEqual((score, level, len(evidence)), (25, "moderate", 1))
 
     def test_consent_and_credentials(self):
-        with TestClient(app) as client:
+        client = TestClient(app)
+        try:
             self.assertEqual(client.post("/v1/reports", json=PAYLOAD).status_code, 401)
             headers = {"Authorization": f"Bearer {token_hex(32)}"}
             self.assertEqual(client.post("/v1/reports", headers=headers, json={**PAYLOAD, "consent": False}).status_code, 422)
+        finally:
+            client.close()
 
 
 @unittest.skipUnless(os.getenv("DATABASE_URL"), "PostgreSQL connection required")
