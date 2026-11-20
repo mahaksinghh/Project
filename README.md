@@ -2,6 +2,8 @@
 
 AppGuardian is an Android APK permission inspector with a web dashboard for reports you choose to share. It checks declared permissions and explains the potential access behind each score.
 
+[Open the public AppGuardian dashboard](https://appguardian-mahaksinghh.vercel.app/)
+
 ## Android
 
 Open `android/` in Android Studio with JDK 17, Gradle 8.11.1 and Android SDK 35. From `android/`, run `gradle testDebugUnitTest lintDebug assembleDebug`. GitHub Actions uploads the debug APK when the Android job succeeds.
