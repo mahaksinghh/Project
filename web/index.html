@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Review Android app privacy findings and manage shared inspection reports.">
+<title>AppGuardian · APK privacy dashboard</title>
+<link rel="stylesheet" href="./style.css">
+<script type="module" src="./dashboard.js"></script>
+</head>
+<body>
+<header><a class="brand" href="./"><span aria-hidden="true">✓</span> AppGuardian</a><a href="https://github.com/mahaksinghh/Project">GitHub ↗</a></header>
+<main>
+<section class="hero">
+  <div><p class="eyebrow">ANDROID APP PRIVACY</p><h1>See what an APK asks to access.</h1>
+  <p>Review permission findings before installing an app. Inspect files on Android and choose which reports to share here.</p>
+  <a class="button" href="#reports">Explore a sample report ↓</a></div>
+  <div class="illustration" aria-hidden="true"><div class="orbit orbit-outer"></div><div class="orbit orbit-inner"></div><svg viewBox="0 0 124 144"><path d="M62 7 114 29v38c0 28-17 52-52 69C27 119 10 95 10 67V29Z" fill="#fff" stroke="#9fc7ee" stroke-width="3"/><path d="m42 70 14 14 27-29" fill="none" stroke="#2674a8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+</section>
+<section id="reports" class="workspace" aria-labelledby="heading">
+  <div class="heading"><div><h2 id="heading">Inspection reports</h2><p id="mode">Sample workspace</p></div><button id="demo" type="button" hidden>Return to sample</button></div>
+  <p id="status" role="status" aria-live="polite"></p>
+  <div id="report-list"></div>
+  <button id="more" type="button" hidden>Load older reports</button>
+  <details class="connect">
+    <summary>Connect a private workspace</summary>
+    <p>Use the same API address and workspace key in the Android app. This page keeps the key in memory until you leave or return to the sample.</p>
+    <form id="connect"><label>API address<input id="api" placeholder="https://api.example.com" type="url" required></label>
+    <label>Workspace key<input id="key" type="password" pattern="[0-9a-f]{64}" autocapitalize="none" autocomplete="off" spellcheck="false" required></label>
+    <div class="actions"><button class="primary" type="submit">Connect</button><button id="generate" type="button">Generate key</button></div></form>
+  </details>
+</section>
+</main>
+<footer>Static permission signals indicate potential access. Review the app’s source and purpose before installing.</footer>
+</body>
+</html>
