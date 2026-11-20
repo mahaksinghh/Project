@@ -2,7 +2,7 @@
 
 AppGuardian is an Android APK permission inspector with a web dashboard for reports you choose to share. It checks declared permissions and explains the potential access behind each score.
 
-[Open the public AppGuardian dashboard](https://appguardian-mahaksinghh.vercel.app/)
+[Open the public AppGuardian dashboard](https://appguardian.vercel.app/)
 
 ## Android
 
